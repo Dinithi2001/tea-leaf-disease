@@ -165,14 +165,28 @@ def explain_disease_rule(disease_key, humidity, temperature, sunshine_hours,
         lines.append(f"Known symptoms NOT reported: {', '.join(missing_symptoms)}")
 
     if not reasons_failed:
-        lines.append(f"CONCLUSION: All environmental conditions support {disease_name}.")
+        lines.append(f"CONCLUSION: Current conditions are consistent with active {disease_name} risk.")
     else:
-        lines.append(f"CONCLUSION: {disease_name} is not fully environmentally supported "
-                      f"because {reasons_failed[0]}.")
+        lines.append(f"CONCLUSION: Current conditions do not match {disease_name}'s typical "
+                      f"favorable conditions ({reasons_failed[0]}). Note: this does not rule out "
+                      f"{disease_name} as the correct diagnosis — visible symptoms often appear "
+                      f"1-3 weeks after the actual infection, by which point weather conditions "
+                      f"may have changed considerably.")
 
     return "\n".join(lines)
-
 def check_environmental_support(humidity, temperature, sunshine_hours, maturity="YoungLeaf_Instance"):
+    """
+    Checks whether CURRENT environmental conditions are consistent with active
+    disease-favorable conditions at this location right now.
+
+    Important: this does NOT validate whether the CNN's diagnosed disease was
+    correctly caused by past weather. Since diseases like Blister Blight have
+    an incubation period of 1-3 weeks between infection and visible symptoms,
+    a visibly diseased leaf photographed today may have been infected under
+    very different weather than what is measured now. This function should be
+    interpreted as a "current disease risk / ongoing favorable conditions"
+    check, not a historical infection-cause validator.
+    """
     leaf = onto.LeafInstance("leaf_test_run")
     for cond in get_conditions(humidity, temperature, sunshine_hours):
         leaf.hasCondition.append(cond)
@@ -263,6 +277,8 @@ if __name__ == "__main__":
               f"(CNN: {info['cnn_confidence']:.1%}, {flag})")
 
     print()
+
+    print()
     top_disease = next(iter(ranked))
     top_info = ranked[top_disease]
     top_disease_class = top_disease + "_Disease"
@@ -274,9 +290,42 @@ if __name__ == "__main__":
     print(explanation)
     print()
 
-    if top_info["environmental_support"] and top_info["cnn_confidence"] > 0.5:
+    if top_info["cnn_confidence"] > 0.85:
+        # High CNN confidence stands on its own. Environmental mismatch does not
+        # invalidate a strong visual diagnosis, since symptoms can lag infection
+        # by 1-3 weeks — current weather may simply differ from infection-time weather.
+        print(f"=== Diagnosis Confirmed: {top_disease} ===")
+        if not top_info["environmental_support"]:
+            print("Note: current weather does not match this disease's typical favorable "
+                  "conditions, but this does not affect confidence in the diagnosis — visible "
+                  "symptoms often reflect conditions from 1-3 weeks earlier.")
+        print("Recommended treatment:")
+        for step in TREATMENTS.get(top_disease, ["No treatment data available."]):
+            print(f"  - {step}")
+
+    elif top_info["environmental_support"] and top_info["cnn_confidence"] > 0.5:
+        # Moderate CNN confidence, but corroborated by current environmental conditions.
         print(f"=== Diagnosis Confirmed: {top_disease} ===")
         print("Recommended treatment:")
         for step in TREATMENTS.get(top_disease, ["No treatment data available."]):
             print(f"  - {step}")
-        print("Treatment guidance withheld until diagnosis is confirmed by matching context or symptoms.")
+
+    elif top_info["cnn_confidence"] > 0.5:
+        # Moderate confidence, no environmental corroboration — this is where
+        # environment/symptom evidence should genuinely matter, since the CNN
+        # itself isn't confident enough to stand alone.
+        if top_info["symptom_score"] > 0:
+            print(f"NOTE: Possible {top_disease} ({top_info['cnn_confidence']:.1%} confidence), "
+                  f"partially supported by reported symptoms ({top_info['symptom_score']:.0%} match), "
+                  f"but current weather does not support it and CNN confidence is only moderate. "
+                  f"Consider professional confirmation.")
+        else:
+            print(f"NOTE: Possible {top_disease} ({top_info['cnn_confidence']:.1%} confidence), but "
+                  f"neither environmental conditions nor reported symptoms support this diagnosis. "
+                  f"Recommend professional inspection before treatment.")
+        print("Treatment guidance withheld pending symptom or expert confirmation.")
+
+    else:
+        print(f"Diagnosis uncertain (top candidate: {top_disease}, confidence "
+              f"{top_info['cnn_confidence']:.1%}). Treatment guidance withheld — "
+              f"recommend professional inspection.")
