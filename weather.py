@@ -1,6 +1,9 @@
 import requests
 
-API_KEY = "7b55a95be33623bf80cf4290d17344b2"
+load_dotenv()
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
+if not API_KEY:
+    raise RuntimeError("OPENWEATHER_API_KEY is not set. Add it to the .env file in the project folder.")
 
 def get_weather(lat, lon):
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=metric"
