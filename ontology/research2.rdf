@@ -1,0 +1,2453 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/"
+     xml:base="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection">
+        <rdfs:comment xml:lang="en">This is an ontology about tea diseses identification</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/environmentallySupported -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/environmentallySupported">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:comment>inferred — reasoner concludes this</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/favoredByCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/favoredByCondition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:comment>this disease is favored by this condition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/favoredByMaturity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/favoredByMaturity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+        <rdfs:comment>this disease favors this leaf stage</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/favoredBySymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/favoredBySymptom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment xml:lang="en">this disease is associated with this symptom</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:comment xml:lang="en">current weather condition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+        <rdfs:comment xml:lang="en">leaf&apos;s growth stage</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment xml:lang="en">leaf instance exhibits this symptom</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasTreatment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <rdfs:comment>treatment step recommended for this disease</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/incompatibleWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/incompatibleWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maturitySupported -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maturitySupported">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:comment>inferred - reasoner concludes this</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/cnnConfidence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/cnnConfidence">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>CNN&apos;s top-1 confidence score</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/cnnLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/cnnLabel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiagnosisLabel"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/humidityValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/humidityValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>% humidity at capture time</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/incubationPeriod -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/incubationPeriod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Time from infection to visible symptoms, as documented in the Handbook on Tea, ch. 14</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/leafWetnessHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/leafWetnessHours">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maxTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maxTemperature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minHumidity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minHumidity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minLeafWetnessHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minLeafWetnessHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minSunshineHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minSunshineHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/minTemperature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/rainfallValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/rainfallValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>rainfall measurement</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/stageOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/stageOrder">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Position of a leaf maturity stage in the leaf&apos;s life, from youngest (1) to oldest. Used to order the options shown to the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/stepOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/stepOrder">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/temperatureValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/temperatureValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/treatmentText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/treatmentText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>On mature patches, black pustules (fruiting bodies) aligned with the concentric lines on the upper leaf surface.</rdfs:comment>
+        <rdfs:label>Black fruiting-body dots</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Roughly circular to oval brown patches marked with concentric zonations.</rdfs:comment>
+        <rdfs:label>Concentric ring patch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Leaf drop, associated with the more severe, diffuse form of the disease.</rdfs:comment>
+        <rdfs:label>Defoliation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiagnosisLabel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiagnosisLabel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Spots spread much more diffusely and may cover a large part of the leaf. This is the more severe form of the disease.</rdfs:comment>
+        <rdfs:label>Diffuse spot spread</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiagnosisLabel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Diseased -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Diseased">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Light to dark brown patches with a greyish centre on the upper leaf surface.</rdfs:comment>
+        <rdfs:label>Grey centre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Healthy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Healthy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PoorAirCirculation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PoorAirCirculation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Red, hair-like stalks bearing several knob-like sporangia at their tips, emerging through minute cracks in the infected patches.</rdfs:comment>
+        <rdfs:label>Reddish hairy spot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Olive-green to red circular spots on the leaf. Leaf damage is negligible, but infection also appears on stems as elongated brick-red to orange patches.</rdfs:comment>
+        <rdfs:label>Rusty spot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Small grey spots about a millimetre wide with a blackish margin.</rdfs:comment>
+        <rdfs:label>Small grey spots with black margin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>Badly affected branches die back, partially or completely. New shoots below the affected part can become infected too.</rdfs:comment>
+        <rdfs:label>Stem dieback</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>First visible sign of blister blight: a pale yellow or lime-green spot, more translucent than the rest of the leaf, that enlarges as a circle up to about 12.5 mm.</rdfs:comment>
+        <rdfs:label>Translucent spot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>The upper surface of the blister is indented, and the lower surface protrudes and turns white and powdery as spores are produced.</rdfs:comment>
+        <rdfs:label>White powdery protrusion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        <rdfs:comment>While the alga is fruiting, leaves on affected stems become variegated, either green and white or green and yellow.</rdfs:comment>
+        <rdfs:label>Yellow patch variegation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Disease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Disease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature_Instance"/>
+        <favoredByMaturity rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion_Instance"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_01"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_02"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_03"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_04"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_05"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_06"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_07"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_08"/>
+        <incubationPeriod>8-10 days from penetration to the first visible symptom (a translucent spot); 18-21 days to a mature sporulating blister</incubationPeriod>
+        <rdfs:comment xml:lang="en">Caused by fungus Exobasidium vexans. Young succulent leaves susceptible; mature leaves develop resistance to infection. Pale yellow or lime green translucent spots gradually enlarge. Protrusion on lower surface becomes white and powdery as spore production begins. Life cycle 3-4 weeks. Favoured by RH 80%+, temperature below 25C, leaf wetness 8-10 hours. Sunshine is detrimental to the fungus.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</stepOrder>
+        <treatmentText>Apply a copper fungicide: a wettable powder containing 50% (w/w) metallic copper, as the oxide, oxychloride or hydroxide. Copper is protective only. It must already be on the leaf surface before the fungus penetrates, and it has no effect once the blister has formed inside the leaf.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.178</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</stepOrder>
+        <treatmentText>If the copper fungicide has a different metallic copper content (for example 25% or 35%), adjust the application rate in proportion to its strength.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.178</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</stepOrder>
+        <treatmentText>A systemic fungicide (ergosterol biosynthesis inhibitor of organic origin) can be used instead. It is protectant and curative and stays active longer, but it costs more. It is favoured over copper when labour is scarce.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.179</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</stepOrder>
+        <treatmentText>Nurseries: spray copper fungicide every 4 days at 90-120 g, or systemic fungicide every 10 days at 25 ml in 45 L of water, for about 30,000 plants (250 m2). Use a knapsack sprayer.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.179</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</stepOrder>
+        <treatmentText>Tea recovering from pruning (the most critical period): spray copper every 4-5 days at 370-490 g, or systemic every 10 days at 85 ml in 170 L of water per hectare, up to the time of tipping. Knapsack sprayers are preferred; mist-blowers use 30-45 L per hectare.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.179</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</stepOrder>
+        <treatmentText>Tea in plucking: spray copper every 7-10 days at 220-420 g, or systemic every 10-14 days at 85 ml in 170 L of water per hectare. Spray on the day after plucking and keep a pre-harvest interval of at least 7 days to stay within maximum residue limits.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.179</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</stepOrder>
+        <treatmentText>Use sunshine hours to schedule spraying: 4 hours of sunshine a day is adequate to prevent spore growth and infection. If there have been 20 hours of cumulative sunshine over the preceding five days, a spray round can be postponed, saving up to 25% of fungicide cost.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.179</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_08 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Treatment_08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</stepOrder>
+        <treatmentText>Shade management: thin or lop established shade before the onset of the monsoon, and avoid dense shade, particularly in mist pockets. Never remove shade completely.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.178</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine"/>
+        <minSunshineHours rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.0</minSunshineHours>
+        <rdfs:comment>placeholder threshold, not sourced; replace with a cited value</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin_Instance"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Treatment_01"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Treatment_02"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Treatment_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Treatment_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</stepOrder>
+        <treatmentText>No special control measures are recommended for Cercosporella leaf disease, a minor leaf disease. Regular copper sprays applied against blister blight prevent it from becoming a problem.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), Control section on minor leaf diseases</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Treatment_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Treatment_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</stepOrder>
+        <treatmentText>Occasional outbreaks in heavy mist pockets can be brought under control with the usual copper fungicide sprays.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), Control section on minor leaf diseases</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Diseased -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Diseased">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PoorAirCirculation_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter_Instance"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Treatment_01"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Treatment_02"/>
+        <rdfs:comment xml:lang="en">Dull brown spot expands into a circular to irregular patch, often with faint concentric zoning; centre fades to pale grey or silvered tone inside a darker brown border; minute black fruiting bodies appear as dots. Wound-dependent fungus — favoured by warm, humid conditions with poor air movement and long leaf wetness, but far more serious on debilitated bushes (drought stress, sunscorch, waterlogging, unbalanced nutrition, pest damage aftermath) than on vigorous ones. Attacks via wounds rather than tender leaf directly, unlike Blister Blight.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Treatment_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Treatment_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</stepOrder>
+        <treatmentText>No special control measures are recommended for grey blight, a minor leaf disease in Sri Lanka. Regular copper sprays applied against blister blight prevent it from becoming a problem.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), Control section on minor leaf diseases</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Treatment_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Treatment_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</stepOrder>
+        <treatmentText>Occasional outbreaks in heavy mist pockets can be brought under control with the usual copper fungicide sprays.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), Control section on minor leaf diseases</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Healthy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Healthy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Healthy_Label -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Healthy_Label">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiagnosisLabel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist"/>
+        <minHumidity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.0</minHumidity>
+        <rdfs:comment>placeholder threshold (95.0), not sourced; replace with a cited value</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity"/>
+        <minHumidity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</minHumidity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature"/>
+        <incompatibleWith rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature_Instance"/>
+        <minTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</minTemperature>
+        <rdfs:comment>placeholder, not sourced</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafWetnessLong"/>
+        <minLeafWetnessHours rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</minLeafWetnessHours>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature"/>
+        <incompatibleWith rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature_Instance"/>
+        <maxTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</maxTemperature>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf"/>
+        <stageOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</stageOrder>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PoorAirCirculation_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PoorAirCirculation_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PoorAirCirculation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Disease"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance"/>
+        <favoredByCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature_Instance"/>
+        <favoredByMaturity rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback_Instance"/>
+        <favoredBySymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation_Instance"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_01"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_02"/>
+        <hasTreatment rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_03"/>
+        <rdfs:comment xml:lang="en">Caused by algae of genus Cephaleuros. Minute rusty spots on young unfolded tender leaves, roundish, enlarging to 10-15mm, reddish and hairy on upper leaf surface. Old and thick leaves become discolored. In later stage spots spread to stem; stem tissues killed in patches causing dieback, leaves of infected branches variegate with yellow patches. Favoured by bright sunshine, high temperature and humidity.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</stepOrder>
+        <treatmentText>Strengthen the host plant, because red rust is more common on weak plants. Improve cultivation practices and apply fertiliser to minimise the damage.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.204</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</stepOrder>
+        <treatmentText>Thatch young clearings during dry weather.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.204</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Treatment_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Treatment"/>
+        <stepOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</stepOrder>
+        <treatmentText>Copper sprays are effective in keeping red rust under control: apply three rounds of spraying at 450 g of fungicide (50% copper) in 170 L of water per hectare.</treatmentText>
+        <rdfs:comment>Source: Handbook on Tea, ch. 14 (Common Diseases of Tea and their Management), p.204</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf"/>
+        <stageOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</stageOrder>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/test_leaf_001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/test_leaf_001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <hasCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine_Instance"/>
+        <hasCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature_Instance"/>
+        <hasMaturity rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf_Instance"/>
+        <hasSymptom rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot_Instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/test_leaf_002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/test_leaf_002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <hasCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance"/>
+        <hasCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature_Instance"/>
+        <hasMaturity rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf_Instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/test_leaf_003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/test_leaf_003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+        <hasCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity_Instance"/>
+        <hasCondition rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress_Instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiagnosisLabel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/EnvironmentalCondition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HealthLabel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafMaturityStage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Symptom"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CerscosporellaMaturity</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maturitySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GreyBlightMaturity</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/MatureLeaf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maturitySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RedRustSymptom2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ReddishHairySpot"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RedRustSymptom1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RustySpot"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CercosporellaSymptom1:</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/SmallGreySpotBlackMargin"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RedRustSymptom4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/StemDieback"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>BlisterBlightSymptom1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/TranslucentSpot"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RedRustRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BrightSunshine"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighTemperature"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/environmentallySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>BlisterBlightSymptom2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/WhitePowderyProtrusion"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RedRustSymptom3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YellowPatchVariegation"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>BilsterBlightMaturity</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maturitySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>RedRustMaturity</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/maturitySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/RedRust_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GreyBlightSymptom1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/ConcentricRingPatch"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CercosporellaSymptom3:</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Defoliation"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CercosporellaSymptom2:</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/DiffuseSpotSpread"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GreyBlightSymptom2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreySilveredCenter"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CercosporellaRule:</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HeavyMist"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/environmentallySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/Cercosporella_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>BlisterBlightRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LowTemperature"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasMaturity"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/YoungLeaf"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/m"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/environmentallySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlisterBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GreyBlightSymptom3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasSymptom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/BlackFruitingBodyDots"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/symptomSupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GreyBlightRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/LeafInstance"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/HighHumidity"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/hasCondition"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/PlantStress"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/c2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/environmentallySupported"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/l"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/user/ontologies/2026/7/tea-leaf-diseases-detection/GreyBlight_Disease"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

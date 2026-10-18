@@ -5,12 +5,12 @@ import os
 import base64
 
 from integration import (
-    predict_disease, check_environmental_support, score_diseases,
-    explain_disease_rule, TREATMENTS
+    predict_disease, check_environmental_support, check_maturity_support,
+    score_diseases, explain_disease_rule, readable, symptom_lag_note, TREATMENTS, MATURITY_STAGES
 )
 from locations import TEA_PLANTATIONS
 from weather import get_weather
-from symptoms import score_symptoms, ALL_SYMPTOMS
+from symptoms import score_symptoms, ALL_SYMPTOMS, SYMPTOM_INFO, symptom_label
 
 
 @st.cache_data
@@ -330,9 +330,9 @@ def render_explanation(explanation_text):
     if matched_symptoms or missing_symptoms:
         pills_html = '<div style="margin: 6px 0 4px 0;">'
         for s in matched_symptoms:
-            pills_html += f'<span class="symptom-pill matched">✓ {s}</span>'
+            pills_html += f'<span class="symptom-pill matched">✓ {symptom_label(s)}</span>'
         for s in missing_symptoms:
-            pills_html += f'<span class="symptom-pill missing">{s}</span>'
+            pills_html += f'<span class="symptom-pill missing">{symptom_label(s)}</span>'
         pills_html += "</div>"
         st.markdown(pills_html, unsafe_allow_html=True)
 
@@ -367,8 +367,20 @@ with st.sidebar:
     selected_site = next(p for p in TEA_PLANTATIONS.values() if p["name"] == location_name)
 
     st.subheader("3. Observed symptoms")
-    st.caption("Optional — select any that match what you see")
-    user_symptoms = st.multiselect("Symptoms", ALL_SYMPTOMS, label_visibility="collapsed")
+    st.caption("Optional — tick any that match what you see. Hover an item for a description.")
+    user_symptoms = []
+    for s in ALL_SYMPTOMS:
+        label, desc = SYMPTOM_INFO.get(s, (s, ""))
+        if st.checkbox(label, key=f"symptom_{s}", help=desc):
+            user_symptoms.append(s)
+
+    st.subheader("4. Leaf maturity")
+    st.caption("Age of the affected leaf")
+    maturity = st.radio(
+        "Leaf maturity", MATURITY_STAGES,
+        format_func=lambda stage: readable(stage).capitalize(),
+        label_visibility="collapsed", horizontal=True,
+    )
 
     st.divider()
     run_button = st.button("🔍 Run diagnosis", type="primary", use_container_width=True)
@@ -416,8 +428,9 @@ if run_button:
 
     progress.progress(75, text="Checking environmental conditions against domain knowledge...")
     ontology_support = check_environmental_support(humidity, temperature, sunshine_hours)
+    maturity_support = check_maturity_support(maturity)
     symptom_matches = score_symptoms(user_symptoms)
-    ranked = score_diseases(cnn_results, ontology_support, symptom_matches)
+    ranked = score_diseases(cnn_results, ontology_support, symptom_matches, maturity_support)
 
     progress.progress(100, text="Done!")
     progress.empty()
@@ -428,14 +441,15 @@ if run_button:
     top_disease_class = top_disease + "_Disease"
 
     st.subheader("📊 Diagnosis snapshot")
-    c1, c2, c3 = st.columns(3)
+    c1, c2, c3, c4 = st.columns(4)
     c1.metric("Location", location_name)
     c2.metric("Humidity", f"{humidity}%")
     c3.metric("Temperature", f"{temperature}°C")
+    c4.metric("Leaf maturity", maturity_choice)
 
     st.divider()
 
-    st.subheader("🧠 CNN prediction")
+    st.subheader("🔍 Visual analysis")
     with st.container(border=True):
         for disease, prob in sorted(cnn_results.items(), key=lambda x: -x[1]):
             st.markdown(f"""
@@ -455,17 +469,19 @@ if run_button:
         for disease, info in ranked.items():
             is_top = disease == top_disease
             icon = "✅" if info["environmental_support"] else "⚠️"
+            maturity_icon = "✅" if info["maturity_support"] else "⚠️"
             label = f"{'⭐ ' if is_top else ''}**{disease}** — {info['final_score']:.1%} overall"
             st.write(f"{label}  \n{icon} CNN {info['cnn_confidence']:.1%} · "
                      f"{'environmentally supported' if info['environmental_support'] else 'no environmental support'} · "
-                     f"symptom match {info['symptom_score']:.0%}")
+                     f"symptom match {info['symptom_score']:.0%} · "
+                     f"{maturity_icon} {'maturity supported' if info['maturity_support'] else 'no maturity support'}")
 
     st.divider()
 
     st.subheader("🔎 Why this diagnosis?")
     explanation = explain_disease_rule(
         top_disease_class, humidity, temperature, sunshine_hours,
-        maturity="YoungLeaf", reported_symptoms=user_symptoms
+        maturity=maturity, reported_symptoms=user_symptoms
     )
     with st.container(border=True):
         render_explanation(explanation)
@@ -481,8 +497,7 @@ if run_button:
         if not top_info["environmental_support"]:
             st.info(
                 "Current weather doesn't match this disease's typical favorable conditions, "
-                "but that doesn't lower confidence here — visible symptoms often reflect "
-                "conditions from 1–3 weeks earlier, before weather changed.",
+                f"but that doesn't lower confidence here — {symptom_lag_note(top_disease)}",
                 icon="💡",
             )
         with st.container(border=True):

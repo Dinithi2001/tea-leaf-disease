@@ -1,4 +1,4 @@
-﻿import json
+import json
 import numpy as np
 import keras
 import keras.src.ops.numpy as npops
@@ -12,7 +12,18 @@ model = keras.models.load_model(
 with open("model/tea_model.classes.json") as f:
     class_list = json.load(f)
 
-full_names = {"BB": "BlisterBlight", "RR": "RedRust", "Healthy": "Healthy"}
+full_names = {
+    "bb": "BlisterBlight", "blisterblight": "BlisterBlight",
+    "rr": "RedRust", "redrust": "RedRust",
+    "gb": "GreyBlight", "greyblight": "GreyBlight", "grayblight": "GreyBlight",
+    "cl": "Cercosporella", "cs": "Cercosporella", "cercosporella": "Cercosporella",
+    "cercosporellaleafdisease": "Cercosporella",
+    "healthy": "Healthy", "h": "Healthy",
+}
+
+def class_name(code):
+    key = "".join(ch for ch in code.lower() if ch.isalnum())
+    return full_names.get(key, code)
 
 def predict_disease(image_path):
     img = load_img(image_path, target_size=(224, 224))
@@ -23,7 +34,7 @@ def predict_disease(image_path):
     results = {}
     for idx, prob in enumerate(predictions):
         code = class_list[idx]
-        name = full_names.get(code, code)
+        name = class_name(code)
         results[name] = float(prob)
     return results
 
